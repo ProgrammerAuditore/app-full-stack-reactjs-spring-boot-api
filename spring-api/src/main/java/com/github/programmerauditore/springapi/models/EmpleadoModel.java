@@ -20,6 +20,14 @@ public class EmpleadoModel {
     private String puesto;
     private String email;
 
+    public EmpleadoModel() {}
+
+    public EmpleadoModel(String nombre, String puesto, String email) {
+        this.nombre = nombre;
+        this.puesto = puesto;
+        this.email = email;
+    }
+
     public Long getId() {
         return id;
     }
