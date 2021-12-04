@@ -16,8 +16,13 @@ public class EmpleadoModel {
     @Column(unique = true, nullable = false)
     private Long id;
 
+    @Column(length = 60)
     private String nombre;
+
+    @Column(length = 60)
     private String puesto;
+
+    @Column(length = 123)
     private String email;
 
     public EmpleadoModel() {}
