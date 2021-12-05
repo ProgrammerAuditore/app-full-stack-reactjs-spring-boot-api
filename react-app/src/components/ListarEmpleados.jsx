@@ -32,7 +32,7 @@ class ListarEmpleados extends Component{
             {/* Un pequeño navegación */}
             <ul className="nav">
             <li className="nav-item">
-                <Link className="nav-link"  to="/crear-empleado">Crear empleado</Link>
+                <Link className="nav-link"  to="registrar">Registrar un empleado</Link>
             </li>
             </ul>
             <Outlet />

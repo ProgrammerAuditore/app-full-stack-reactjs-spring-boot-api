@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import ListarEmpleados from "./components/ListarEmpleados";
-import CrearEmpleado from "./components/CrearEmpleado";
+import RegistrarEmpleado from "./components/RegistrarEmpleado";
 import EditarEmpleado from "./components/EditarEmpleado";
 import Layout from "./view/Layout";
 import Home from "./view/Home";
@@ -16,7 +16,7 @@ function App() {
       <Route path="empleados" element={<Layout />}>
         <Route index element={<ListarEmpleados />} />
         <Route path="actualizar/:id" element={<EditarEmpleado />}></Route>
-        <Route path="registrar" element={<CrearEmpleado />}></Route>
+        <Route path="registrar" element={<RegistrarEmpleado />}></Route>
       </Route>
       <Route path="*" element={<NotFound />} />
     </Routes>

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Form, Button, Card, Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import EmpleadoService from "../services/EmpleadoService";
-class CrearEmpleado extends Component {
+class RegistrarEmpleado extends Component {
   constructor(props) {
     super(props);
 
@@ -14,10 +14,10 @@ class CrearEmpleado extends Component {
       },
     };
 
-    this.fncCrearEmpleado = this.fncCrearEmpleado.bind(this);
+    this.fncRegistrarEmpleado = this.fncRegistrarEmpleado.bind(this);
   }
 
-  fncCrearEmpleado(event) {
+  fncRegistrarEmpleado(event) {
     event.preventDefault();
     const empleado = JSON.stringify(this.state.empleado);
 
@@ -51,9 +51,9 @@ class CrearEmpleado extends Component {
         <Row>
           <Col md={8} className="mx-auto">
             <Card style={{ marginTop: "8vh" }}>
-              <Card.Header className="h4">Crear un empleado</Card.Header>
+              <Card.Header className="h4">Registrar un empleado</Card.Header>
               <Card.Body>
-                <Form onSubmit={this.fncCrearEmpleado}>
+                <Form onSubmit={this.fncRegistrarEmpleado}>
                   <Form.Group className="mb-3" controlId="formBasicNombre">
                     <Form.Label>Nombre</Form.Label>
                     <Form.Control
@@ -87,7 +87,7 @@ class CrearEmpleado extends Component {
                   <Button variant="primary" type="submit">
                     Crear empleado
                   </Button>{" "}
-                  <Link className="btn btn-danger" role="button" to="/">
+                  <Link className="btn btn-danger" role="button" to="/empleados">
                     Cancelar
                   </Link>{" "}
                 </Form>
@@ -100,4 +100,4 @@ class CrearEmpleado extends Component {
   }
 }
 
-export default CrearEmpleado;
+export default RegistrarEmpleado;
