@@ -8,6 +8,10 @@ class EmpleadoService {
         return axios.get(EMPLEADO_API_BASE_URL);
     }
 
+    createEmpleado(empleado){
+        return axios.post(EMPLEADO_API_BASE_URL,empleado);
+    }
+
 }
 
 export default new EmpleadoService();

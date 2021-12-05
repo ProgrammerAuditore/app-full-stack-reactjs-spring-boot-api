@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Form, Button, Card, Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import EmpleadoService from "../services/EmpleadoService";
 class CrearEmpleado extends Component {
   constructor(props) {
     super(props);
@@ -18,7 +19,14 @@ class CrearEmpleado extends Component {
 
   fncCrearEmpleado(event) {
     event.preventDefault();
-    const empleado = JSON.stringify(this.state.empleado);
+    const empleado = this.state.empleado;
+
+    EmpleadoService.createEmpleado(empleado)
+    .then((response) => {
+      window.location.href = "/";
+    })
+    .catch(console.log("Error al crear el empleado"));
+
     console.log(empleado);
     console.log("Creando un empleado...");
   }
