@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import EmpleadoService from '../services/EmpleadoService';
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 
 class ListarEmpleados extends Component{
 
@@ -35,7 +35,7 @@ class ListarEmpleados extends Component{
                 <Link className="nav-link"  to="/crear-empleado">Crear empleado</Link>
             </li>
             </ul>
-            
+            <Outlet />
             <div className="row">
                 <table className="table table-striped table-bordered">
                     <thead>
@@ -58,7 +58,7 @@ class ListarEmpleados extends Component{
                                     <td>{empleado.email}</td>
                                     <td>
                                         <Link className="btn btn-warning" role="button" 
-                                        to={`/editar-empleado/${empleado.id}`}>
+                                        to={`empleados/actualizar/${empleado.id}`}>
                                             Editar
                                         </Link>{" "}
                                     </td>

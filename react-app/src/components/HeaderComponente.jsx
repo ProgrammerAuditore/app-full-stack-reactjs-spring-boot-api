@@ -19,8 +19,8 @@ class HeaderComponente extends Component {
                         <NavDropdown.Item href="/empleados">
                         Listar
                         </NavDropdown.Item>
-                        <NavDropdown.Item href="/crear-empleado">
-                        Crear
+                        <NavDropdown.Item href="/empleados/registrar">
+                        Registrar
                         </NavDropdown.Item>
                         <NavDropdown.Divider />
                         <NavDropdown.Item href="#action/3.4">
