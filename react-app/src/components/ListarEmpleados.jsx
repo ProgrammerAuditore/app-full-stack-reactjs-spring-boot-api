@@ -24,12 +24,15 @@ class ListarEmpleados extends Component{
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>#1</td>
-                            <td>Carlos</td>
-                            <td>Desing</td>
-                            <td>carlos@example.com</td>
-                        </tr>
+                        {
+                            this.state.empleados.map((empleado) => {
+                                <tr key={empleado.id}>
+                                    <td>{empleado.id}</td>
+                                    <td>{empleado.nombre}</td>
+                                    <td>{empleado.mail}</td>
+                                </tr>;
+                            })
+                        }
                     </tbody>
                 </table>
             </div>
