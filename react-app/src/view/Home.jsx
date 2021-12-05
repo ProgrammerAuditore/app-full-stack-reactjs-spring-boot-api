@@ -11,7 +11,7 @@ class Home extends Component {
                         <p class="lead">Jumbo helper text</p>
                         <hr class="my-4"/>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum corporis minima laudantium, maxime temporibus sint. Explicabo harum officia libero dolorum! Cum commodi fugit eveniet delectus explicabo tempore illo laudantium et?</p>
-                        <a href="https://github.com/ProgrammerAuditore" target="_blank" class="btn btn-primary btn-lg" >ProgrammerAuditore</a>
+                        <a href="https://github.com/ProgrammerAuditore" target="_blank"  rel="noreferrer" class="btn btn-primary btn-lg" >ProgrammerAuditore</a>
                     </div>
                 </div>
             </div>
