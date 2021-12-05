@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import EmpleadoService from "../services/EmpleadoService";
 import { useParams } from "react-router";
 
-function EditarEmpleado() {
+function ActualizarEmpleado() {
   let { id } = useParams();
 
   const [empleado, setEmpleado] = useState({
@@ -38,7 +38,7 @@ function EditarEmpleado() {
     console.log(target.name, target.value);
   }
 
-  const fncEditarEmpleado= (event) => {
+  const fncActualizarEmpleado= (event) => {
     event.preventDefault();
 
     EmpleadoService.updateEmpleado(empleado, empleado.id)
@@ -59,7 +59,7 @@ function EditarEmpleado() {
           <Card style={{ marginTop: "8vh" }}>
             <Card.Header className="h4">Editar un empleado</Card.Header>
             <Card.Body>
-              <Form onSubmit={fncEditarEmpleado}>
+              <Form onSubmit={fncActualizarEmpleado}>
                 <Form.Group className="mb-3" controlId="formBasicNombre">
                   <Form.Label>Nombre</Form.Label>
                   <Form.Control
@@ -93,7 +93,7 @@ function EditarEmpleado() {
                 <Button variant="primary" type="submit">
                   Crear empleado
                 </Button>{" "}
-                <Link className="btn btn-danger" role="button" to="/">
+                <Link className="btn btn-danger" role="button" to="/empleados">
                   Cancelar
                 </Link>{" "}
               </Form>
@@ -105,4 +105,4 @@ function EditarEmpleado() {
   );
 }
 
-export default EditarEmpleado;
+export default ActualizarEmpleado;
