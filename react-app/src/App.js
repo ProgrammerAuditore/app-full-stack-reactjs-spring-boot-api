@@ -5,10 +5,11 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="container">
-      <h1>Hola mundo, react JS</h1>
+    <div>
       <HeaderComponente></HeaderComponente>
-      <ListarEmpleados></ListarEmpleados>
+      <div className="container">
+        <ListarEmpleados></ListarEmpleados>
+      </div>
       <FooterComponente></FooterComponente>
     </div>
   );
