@@ -13,6 +13,7 @@ class ListarEmpleados extends Component{
         this.fncRegistrarEmpleado = this.fncRegistrarEmpleado.bind(this);
         this.fncActualizarEmpleado = this.fncActualizarEmpleado.bind(this);
         this.fncEliminarEmpleado = this.fncEliminarEmpleado.bind(this);
+        this.fncVerEmpleado = this.fncVerEmpleado.bind(this);
     }
 
     componentDidMount(){
@@ -40,6 +41,12 @@ class ListarEmpleados extends Component{
     fncRegistrarEmpleado(){
         const urlActual = window.location.pathname; 
         const path = `${urlActual}/registrar`;
+        window.location.href = path;
+    }
+
+    fncVerEmpleado(empleadoId){
+        const urlActual = window.location.pathname; 
+        const path = `${urlActual}/ver/${empleadoId}`;
         window.location.href = path;
     }
     
@@ -72,6 +79,11 @@ class ListarEmpleados extends Component{
                                     <td>{empleado.puesto}</td>
                                     <td>{empleado.email}</td>
                                     <td>
+                                        <button 
+                                        onClick={() => this.fncVerEmpleado(empleado.id)}
+                                        className="btn btn-info btn-sm">
+                                            Ver
+                                        </button>{" "}
                                         <button 
                                         onClick={() => this.fncActualizarEmpleado(empleado.id)}
                                         className="btn btn-warning btn-sm">

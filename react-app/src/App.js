@@ -6,6 +6,7 @@ import ActualizarEmpleado from "./components/ActualizarEmpleado";
 import Layout from "./view/Layout";
 import Home from "./view/Home";
 import NotFound from "./view/NotFound";
+import VistaEmpleado from "./components/VistaEmpleado";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       </Route>
       <Route path="empleados" element={<Layout />}>
         <Route index element={<ListarEmpleados />} />
+        <Route path="ver/:id" element={<VistaEmpleado />}></Route>
         <Route path="actualizar/:id" element={<ActualizarEmpleado />}></Route>
         <Route path="registrar" element={<RegistrarEmpleado />}></Route>
       </Route>
