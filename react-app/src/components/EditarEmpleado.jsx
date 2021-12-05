@@ -38,6 +38,20 @@ function EditarEmpleado() {
     console.log(target.name, target.value);
   }
 
+  const fncEditarEmpleado= (event) => {
+    event.preventDefault();
+
+    EmpleadoService.updateEmpleado(empleado, empleado.id)
+    .then((resp) => {
+      console.log("Usuario actualizado.");
+      window.location.href="/";
+    })
+    .catch((resp) => {
+      console.log("Error, usuario no actualizado.");
+    });
+    
+  }
+
   return (
     <>
       <Row>
@@ -45,7 +59,7 @@ function EditarEmpleado() {
           <Card style={{ marginTop: "8vh" }}>
             <Card.Header className="h4">Editar un empleado</Card.Header>
             <Card.Body>
-              <Form>
+              <Form onSubmit={fncEditarEmpleado}>
                 <Form.Group className="mb-3" controlId="formBasicNombre">
                   <Form.Label>Nombre</Form.Label>
                   <Form.Control

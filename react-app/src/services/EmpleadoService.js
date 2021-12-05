@@ -21,6 +21,10 @@ class EmpleadoService {
         return axios.get(`${EMPLEADO_API_BASE_URL}/${empleadoId}`);
     }
 
+    updateEmpleado(empleado, empleadoId){
+        return axios.put(`${EMPLEADO_API_BASE_URL}/${empleadoId}`, empleado);
+    }
+
 }
 
 export default new EmpleadoService();
