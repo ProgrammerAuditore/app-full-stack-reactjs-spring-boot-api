@@ -30,8 +30,8 @@ class ListarEmpleados extends Component{
             <h2 className="text-center">Lista de empleados</h2>
             
             {/* Un pequeño navegación */}
-            <ul class="nav">
-            <li class="nav-item">
+            <ul className="nav">
+            <li className="nav-item">
                 <Link className="nav-link"  to="/crear-empleado">Crear empleado</Link>
             </li>
             </ul>

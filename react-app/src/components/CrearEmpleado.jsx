@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 import { Form, Button, Card, Col, Row } from "react-bootstrap";
-
+import { Link } from "react-router-dom";
 class CrearEmpleado extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       empleado: {
-        nombre:'',
-        puesto: '',
-        email: ''
+        nombre: "",
+        puesto: "",
+        email: "",
       },
     };
 
@@ -18,6 +18,8 @@ class CrearEmpleado extends Component {
 
   fncCrearEmpleado(event) {
     event.preventDefault();
+    const empleado = JSON.stringify(this.state.empleado);
+    console.log(empleado);
     console.log("Creando un empleado...");
   }
 
@@ -26,14 +28,14 @@ class CrearEmpleado extends Component {
     const name = event.target.name;
     const value = event.target.value;
     this.setState({
-      empleado:{
+      empleado: {
         ...this.state.empleado,
-        [name] : value
-      }
+        [name]: value,
+      },
     });
 
     console.log(event.target.name, event.target.value);
-  }
+  };
 
   render() {
     return (
@@ -54,7 +56,6 @@ class CrearEmpleado extends Component {
                       placeholder="Escribe el nombre"
                     />
                   </Form.Group>
-
                   <Form.Group className="mb-3" controlId="formBasicPuesto">
                     <Form.Label>Puesto</Form.Label>
                     <Form.Control
@@ -65,20 +66,22 @@ class CrearEmpleado extends Component {
                       placeholder="Escribe el puesto"
                     />
                   </Form.Group>
-
                   <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email</Form.Label>
-                    <Form.Control 
-                    type="email" 
-                    name="email"
-                    value={this.state.empleado.email}
-                    onChange={this.fncEntradaDatos}
-                    placeholder="Escribe el email" />
+                    <Form.Control
+                      type="email"
+                      name="email"
+                      value={this.state.empleado.email}
+                      onChange={this.fncEntradaDatos}
+                      placeholder="Escribe el email"
+                    />
                   </Form.Group>
-
                   <Button variant="primary" type="submit">
                     Crear empleado
-                  </Button>
+                  </Button>{" "}
+                  <Link className="btn btn-danger" role="button" to="/">
+                    Cancelar
+                  </Link>{" "}
                 </Form>
               </Card.Body>
             </Card>
