@@ -22,13 +22,15 @@ class RegistrarEmpleado extends Component {
     const empleado = JSON.stringify(this.state.empleado);
 
     EmpleadoService.createEmpleado(empleado)
-    .then((response) => {
-      window.location.href = "/empleados";
+    .then((resp) => {
+      let nuevoEmpleado = resp.data;
+      alert("Empleado registrado exitosamente.");
+      window.location.href = `/empleados/ver/${nuevoEmpleado.id}`;
     })
-    .catch(console.log("Error al crear el empleado"));
-
-    console.log(empleado);
-    console.log("Creando un empleado...");
+    .catch((resp) => {
+      alert("Empleado no creado. Hubo un error en el servidor.");
+      window.location.href = "/empleados";
+    });
   }
 
   fncEntradaDatos = (event) => {
@@ -84,10 +86,10 @@ class RegistrarEmpleado extends Component {
                       placeholder="Escribe el email"
                     />
                   </Form.Group>
-                  <Button variant="primary" type="submit">
+                  <Button variant="primary" size="sm" type="submit">
                     Registrar empleado
                   </Button>{" "}
-                  <Link className="btn btn-danger" role="button" to="/empleados">
+                  <Link className="btn btn-danger btn-sm" role="button" to="/empleados">
                     Cancelar
                   </Link>{" "}
                 </Form>
