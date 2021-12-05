@@ -20,7 +20,7 @@ function ActualizarEmpleado() {
         let getEmpleado = res.data;
         setEmpleado(getEmpleado);
     }).catch(() => {
-        window.location.href = "/";
+        window.location.href = "/empleados";
     });
 
   }, [id]);

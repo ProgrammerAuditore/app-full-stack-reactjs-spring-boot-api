@@ -23,7 +23,7 @@ class RegistrarEmpleado extends Component {
 
     EmpleadoService.createEmpleado(empleado)
     .then((response) => {
-      window.location.href = "/";
+      window.location.href = "/empleados";
     })
     .catch(console.log("Error al crear el empleado"));
 
@@ -85,7 +85,7 @@ class RegistrarEmpleado extends Component {
                     />
                   </Form.Group>
                   <Button variant="primary" type="submit">
-                    Crear empleado
+                    Registrar empleado
                   </Button>{" "}
                   <Link className="btn btn-danger" role="button" to="/empleados">
                     Cancelar
