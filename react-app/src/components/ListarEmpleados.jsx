@@ -38,7 +38,8 @@ class ListarEmpleados extends Component{
                                 return <tr key={empleado.id}>
                                     <td>{empleado.id}</td>
                                     <td>{empleado.nombre}</td>
-                                    <td>{empleado.mail}</td>
+                                    <td>{empleado.puesto}</td>
+                                    <td>{empleado.email}</td>
                                 </tr>
                             })
                         }
