@@ -10,6 +10,7 @@ import com.github.programmerauditore.springapi.models.EmpleadoModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -65,6 +66,18 @@ public class EmpleadoController {
         EmpleadoModel updateEmpleado = empleadoRepository.save(empleado);
 
         return ResponseEntity.ok(updateEmpleado);
+    }
+
+    @DeleteMapping( path = "/empleados/{id}")
+    public ResponseEntity<EmpleadoModel> deleteEmpleado(@PathVariable Long id){
+
+        // Buscar el empleado o recibir un error
+        EmpleadoModel deleteEmpleado = empleadoRepository.findById(id)
+        .orElseThrow(() -> new ResourceNotFoundException("Empleado no encontrado en el sistema"));
+        
+        empleadoRepository.delete(deleteEmpleado);
+
+        return ResponseEntity.ok(deleteEmpleado);
     }
     
 }   
