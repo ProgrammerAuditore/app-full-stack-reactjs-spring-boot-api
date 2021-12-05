@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -48,4 +49,22 @@ public class EmpleadoController {
         return ResponseEntity.ok(empleado);
     }
 
+
+    // actualizar un empleado
+    @PutMapping( path = "/empleados/{id}")
+    public ResponseEntity<EmpleadoModel> updateEmpleado(@PathVariable Long id, @RequestBody EmpleadoModel newEmpleado){
+        
+        // Buscar el empleado o recibir un error
+        EmpleadoModel empleado = empleadoRepository.findById(id)
+        .orElseThrow(() -> new ResourceNotFoundException("Empleado no encontrado en el sistema."));
+
+        empleado.setEmail(newEmpleado.getEmail());
+        empleado.setNombre(newEmpleado.getNombre());
+        empleado.setPuesto(newEmpleado.getPuesto());
+
+        EmpleadoModel updateEmpleado = empleadoRepository.save(empleado);
+
+        return ResponseEntity.ok(updateEmpleado);
+    }
+    
 }   
