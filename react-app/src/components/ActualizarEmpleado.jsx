@@ -44,7 +44,7 @@ function ActualizarEmpleado() {
     EmpleadoService.updateEmpleado(empleado, empleado.id)
     .then((resp) => {
       console.log("Usuario actualizado.");
-      window.location.href="/";
+      window.location.href= `/empleados/ver/${empleado.id}`;
     })
     .catch((resp) => {
       console.log("Error, usuario no actualizado.");
@@ -57,7 +57,7 @@ function ActualizarEmpleado() {
       <Row>
         <Col md={8} className="mx-auto">
           <Card style={{ marginTop: "8vh" }}>
-            <Card.Header className="h4">Editar un empleado</Card.Header>
+            <Card.Header className="h4">Actualizar un empleado</Card.Header>
             <Card.Body>
               <Form onSubmit={fncActualizarEmpleado}>
                 <Form.Group className="mb-3" controlId="formBasicNombre">
@@ -90,10 +90,10 @@ function ActualizarEmpleado() {
                     placeholder="Escribe el email"
                   />
                 </Form.Group>
-                <Button variant="primary" type="submit">
-                  Crear empleado
+                <Button variant="primary" type="submit" size="sm">
+                  Actualizar empleado
                 </Button>{" "}
-                <Link className="btn btn-danger" role="button" to="/empleados">
+                <Link className="btn btn-danger btn-sm" role="button" to="/empleados">
                   Cancelar
                 </Link>{" "}
               </Form>
