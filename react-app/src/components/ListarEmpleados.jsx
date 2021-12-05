@@ -12,6 +12,7 @@ class ListarEmpleados extends Component{
         }
 
         this.fncRegistrarEmpleado = this.fncRegistrarEmpleado.bind(this);
+        this.fncActualizarEmpleado = this.fncActualizarEmpleado.bind(this);
         this.fncEliminarEmpleado = this.fncEliminarEmpleado.bind(this);
     }
 
@@ -22,28 +23,35 @@ class ListarEmpleados extends Component{
         });
     }
 
-    fncRegistrarEmpleado(){
-        this.props.history.push("/crear-empleado");
+    fncActualizarEmpleado(empleadoId){
+        const urlActual = window.location.pathname; 
+        const path = `${urlActual}/actualizar/${empleadoId}`;
+        window.location.href = path;
     }
 
     fncEliminarEmpleado(empleadoId){
         EmpleadoService.deleteEmpleado(empleadoId)
         .then((resp) => {
             window.location.href = "/empleados";
+        }).catch((resp) => {
+            window.location.href = "/empleados";
         });
+    }
+
+    fncRegistrarEmpleado(){
+        const urlActual = window.location.pathname; 
+        const path = `${urlActual}/registrar`;
+        window.location.href = path;
     }
     
     render(){
         return (<div>
             <h2 className="text-center">Lista de empleados</h2>
-            
-            {/* Un pequeño navegación */}
-            <ul className="nav">
-            <li className="nav-item">
-                <Link className="nav-link"  to="registrar">Registrar un empleado</Link>
-            </li>
-            </ul>
-            <Outlet />
+            <button
+            onClick={this.fncRegistrarEmpleado}
+            className="btn btn-primary btn-sm m-2" role="button">
+                Registrar empleado
+            </button>
             <div className="row">
                 <table className="table table-striped table-bordered">
                     <thead>
@@ -65,11 +73,14 @@ class ListarEmpleados extends Component{
                                     <td>{empleado.puesto}</td>
                                     <td>{empleado.email}</td>
                                     <td>
-                                        <Link className="btn btn-warning btn-sm" role="button" 
-                                        to={`actualizar/${empleado.id}`}>
+                                        <button 
+                                        onClick={() => this.fncActualizarEmpleado(empleado.id)}
+                                        className="btn btn-warning btn-sm" role="button">
                                             Editar
-                                        </Link>{" "}
-                                        <button onClick={() => this.fncEliminarEmpleado(empleado.id)} className="btn btn-danger btn-sm" role="button">
+                                        </button>{" "}
+                                        <button 
+                                        onClick={() => this.fncEliminarEmpleado(empleado.id)}
+                                        className="btn btn-danger btn-sm" role="button">
                                             Eliminar
                                         </button>
                                     </td>
