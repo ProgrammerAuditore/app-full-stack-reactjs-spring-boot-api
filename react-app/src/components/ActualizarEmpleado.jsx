@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Form, Button, Card, Col, Row } from "react-bootstrap";
+import { Form, Button, Card, Col, Row, Stack } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import EmpleadoService from "../services/EmpleadoService";
 import { useParams } from "react-router";
@@ -57,7 +57,21 @@ function ActualizarEmpleado() {
       <Row>
         <Col md={8} className="mx-auto">
           <Card style={{ marginTop: "8vh" }}>
-            <Card.Header className="h4">Actualizar un empleado</Card.Header>
+            <Card.Header className="h4">
+            <Stack direction="horizontal" gap={3}>
+                <h4>Actualizar empleado</h4>
+                <div className="ms-auto"></div>
+                <div>
+                  <Link
+                    className="btn btn-primary"
+                    role="button"
+                    to="/empleados"
+                  >
+                    Volver
+                  </Link>{" "}
+                </div>
+              </Stack>
+            </Card.Header>
             <Card.Body>
               <Form onSubmit={fncActualizarEmpleado}>
                 <Form.Group className="mb-3" controlId="formBasicNombre">
