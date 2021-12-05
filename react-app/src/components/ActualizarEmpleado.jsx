@@ -105,7 +105,7 @@ function ActualizarEmpleado() {
                   />
                 </Form.Group>
                 <Button variant="primary" type="submit" size="sm">
-                  Actualizar empleado
+                  Actualizar
                 </Button>{" "}
                 <Link className="btn btn-danger btn-sm" role="button" to="/empleados">
                   Cancelar

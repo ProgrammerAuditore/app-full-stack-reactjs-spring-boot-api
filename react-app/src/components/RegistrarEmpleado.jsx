@@ -101,7 +101,7 @@ class RegistrarEmpleado extends Component {
                     />
                   </Form.Group>
                   <Button variant="primary" size="sm" type="submit">
-                    Registrar empleado
+                    Registrar
                   </Button>{" "}
                   <Link className="btn btn-danger btn-sm" role="button" to="/empleados">
                     Cancelar
