@@ -68,8 +68,8 @@ class ListarEmpleados extends Component{
                 <table className="table table-striped table-bordered">
                     <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>Name</th>
+                            <th>#ID</th>
+                            <th>Nombre</th>
                             <th>Puesto</th>
                             <th>Email</th>
                             <th>Acciones</th>
@@ -80,7 +80,7 @@ class ListarEmpleados extends Component{
                             this.state.empleados.map( 
                             (empleado) => {
                                 return <tr key={empleado.id}>
-                                    <td>{empleado.id}</td>
+                                    <td>#{empleado.id}</td>
                                     <td>{empleado.nombre}</td>
                                     <td>{empleado.puesto}</td>
                                     <td>{empleado.email}</td>
