@@ -9,6 +9,8 @@ import com.github.programmerauditore.springapi.models.EmpleadoModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,9 +23,14 @@ public class EmpleadoController {
     private EmpleadoRepository empleadoRepository;
 
     // obtener todo los empleados
-    @GetMapping( path="/empleados" )
+    @GetMapping( path = "/empleados" )
     public List<EmpleadoModel> getAllEmpleados(){
         return empleadoRepository.findAll();
     }
 
+    // crear un empleado
+    @PostMapping( path = "/empleados")
+    public EmpleadoModel createEmpleado(@RequestBody EmpleadoModel empleado){
+        return empleadoRepository.save(empleado);
+    }
 }
