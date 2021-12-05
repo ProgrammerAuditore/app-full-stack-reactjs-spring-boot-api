@@ -19,7 +19,7 @@ class CrearEmpleado extends Component {
 
   fncCrearEmpleado(event) {
     event.preventDefault();
-    const empleado = this.state.empleado;
+    const empleado = JSON.stringify(this.state.empleado);
 
     EmpleadoService.createEmpleado(empleado)
     .then((response) => {

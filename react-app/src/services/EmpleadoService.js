@@ -9,7 +9,12 @@ class EmpleadoService {
     }
 
     createEmpleado(empleado){
-        return axios.post(EMPLEADO_API_BASE_URL,empleado);
+        return axios.post(EMPLEADO_API_BASE_URL, empleado, {
+            headers: {
+                // Overwrite Axios's automatically set Content-Type
+                'Content-Type': 'application/json'
+            }
+        });
     }
 
 }
