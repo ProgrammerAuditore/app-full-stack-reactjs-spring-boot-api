@@ -12,6 +12,7 @@ class ListarEmpleados extends Component{
         }
 
         this.fncRegistrarEmpleado = this.fncRegistrarEmpleado.bind(this);
+        this.fncEliminarEmpleado = this.fncEliminarEmpleado.bind(this);
     }
 
     componentDidMount(){
@@ -25,6 +26,13 @@ class ListarEmpleados extends Component{
         this.props.history.push("/crear-empleado");
     }
 
+    fncEliminarEmpleado(empleadoId){
+        EmpleadoService.deleteEmpleado(empleadoId)
+        .then((resp) => {
+            window.location.href = "/empleados";
+        });
+    }
+    
     render(){
         return (<div>
             <h2 className="text-center">Lista de empleados</h2>
@@ -57,10 +65,13 @@ class ListarEmpleados extends Component{
                                     <td>{empleado.puesto}</td>
                                     <td>{empleado.email}</td>
                                     <td>
-                                        <Link className="btn btn-warning" role="button" 
+                                        <Link className="btn btn-warning btn-sm" role="button" 
                                         to={`actualizar/${empleado.id}`}>
                                             Editar
                                         </Link>{" "}
+                                        <button onClick={() => this.fncEliminarEmpleado(empleado.id)} className="btn btn-danger btn-sm" role="button">
+                                            Eliminar
+                                        </button>
                                     </td>
                                 </tr>
                             })
