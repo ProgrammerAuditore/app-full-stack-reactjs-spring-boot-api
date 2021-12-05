@@ -2,7 +2,9 @@ package com.github.programmerauditore.springapi.controllers;
 
 import com.github.programmerauditore.springapi.repositories.EmpleadoRepository;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.github.programmerauditore.springapi.exception.ResourceNotFoundException;
 import com.github.programmerauditore.springapi.models.EmpleadoModel;
@@ -68,16 +70,19 @@ public class EmpleadoController {
         return ResponseEntity.ok(updateEmpleado);
     }
 
+    // eliminar empleado
     @DeleteMapping( path = "/empleados/{id}")
-    public ResponseEntity<EmpleadoModel> deleteEmpleado(@PathVariable Long id){
+    public ResponseEntity<Map<String, Boolean>> deleteEmpleado(@PathVariable Long id){
 
         // Buscar el empleado o recibir un error
         EmpleadoModel deleteEmpleado = empleadoRepository.findById(id)
         .orElseThrow(() -> new ResourceNotFoundException("Empleado no encontrado en el sistema"));
         
         empleadoRepository.delete(deleteEmpleado);
+        Map<String, Boolean> response = new HashMap<>();
+        response.put("eliminado", Boolean.TRUE);
 
-        return ResponseEntity.ok(deleteEmpleado);
+        return ResponseEntity.ok(response);
     }
     
 }   
