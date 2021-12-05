@@ -3,6 +3,7 @@ import "./App.css";
 import ListarEmpleados from "./components/ListarEmpleados";
 import HeaderComponente from "./components/HeaderComponente";
 import FooterComponente from "./components/FooterComponente";
+import CrearEmpleado from "./components/CrearEmpleado";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <div className="container">
           <Routes>
             <Route path="/" element={<ListarEmpleados/>}></Route>
+            <Route path="/crear-empleado" element={<CrearEmpleado/>}></Route>
           </Routes>
         </div>
         <FooterComponente></FooterComponente>
