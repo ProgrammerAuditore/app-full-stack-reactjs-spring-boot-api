@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import EmpleadoService from '../services/EmpleadoService';
+import { Link } from 'react-router-dom';
 
 class ListarEmpleados extends Component{
 
@@ -9,6 +10,8 @@ class ListarEmpleados extends Component{
         this.state = {
             empleados : []
         }
+
+        this.fncRegistrarEmpleado = this.fncRegistrarEmpleado.bind(this);
     }
 
     componentDidMount(){
@@ -18,9 +21,21 @@ class ListarEmpleados extends Component{
         });
     }
 
+    fncRegistrarEmpleado(){
+        this.props.history.push("/crear-empleado");
+    }
+
     render(){
         return (<div>
             <h2 className="text-center">Lista de empleados</h2>
+            
+            {/* Un pequeño navegación */}
+            <ul class="nav">
+            <li class="nav-item">
+                <Link className="nav-link"  to="/crear-empleado">Crear empleado</Link>
+            </li>
+            </ul>
+            
             <div className="row">
                 <table className="table table-striped table-bordered">
                     <thead>
