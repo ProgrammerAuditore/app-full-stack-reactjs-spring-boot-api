@@ -10,7 +10,7 @@ function App() {
         <HeaderComponente></HeaderComponente>
         <div className="container">
           <Routes>
-            <Route path="/empleados" element={<ListarEmpleados/>}></Route>
+            <Route path="/" element={<ListarEmpleados/>}></Route>
           </Routes>
         </div>
         <FooterComponente></FooterComponente>
