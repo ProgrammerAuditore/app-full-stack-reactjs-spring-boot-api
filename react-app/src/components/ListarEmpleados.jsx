@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import EmpleadoService from '../services/EmpleadoService';
-import { Link, Outlet } from 'react-router-dom';
 
 class ListarEmpleados extends Component{
 
@@ -49,7 +48,7 @@ class ListarEmpleados extends Component{
             <h2 className="text-center">Lista de empleados</h2>
             <button
             onClick={this.fncRegistrarEmpleado}
-            className="btn btn-primary btn-sm m-2" role="button">
+            className="btn btn-primary btn-sm m-2">
                 Registrar empleado
             </button>
             <div className="row">
@@ -75,12 +74,12 @@ class ListarEmpleados extends Component{
                                     <td>
                                         <button 
                                         onClick={() => this.fncActualizarEmpleado(empleado.id)}
-                                        className="btn btn-warning btn-sm" role="button">
+                                        className="btn btn-warning btn-sm">
                                             Editar
                                         </button>{" "}
                                         <button 
                                         onClick={() => this.fncEliminarEmpleado(empleado.id)}
-                                        className="btn btn-danger btn-sm" role="button">
+                                        className="btn btn-danger btn-sm">
                                             Eliminar
                                         </button>
                                     </td>
