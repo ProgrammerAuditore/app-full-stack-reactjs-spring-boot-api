@@ -30,12 +30,18 @@ class ListarEmpleados extends Component{
     }
 
     fncEliminarEmpleado(empleadoId){
+
+        const re = window.confirm("¿Seguro que deseas eliminar al empleado seleccionado?");
+        if(!re) return null;
+
         EmpleadoService.deleteEmpleado(empleadoId)
         .then((resp) => {
+            alert("Empleado eliminado exitosamente.");
             window.location.href = "/empleados";
         }).catch((resp) => {
             window.location.href = "/empleados";
         });
+
     }
 
     fncRegistrarEmpleado(){
