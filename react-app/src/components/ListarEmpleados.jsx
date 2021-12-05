@@ -44,6 +44,7 @@ class ListarEmpleados extends Component{
                             <th>Name</th>
                             <th>Puesto</th>
                             <th>Email</th>
+                            <th>Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -55,6 +56,12 @@ class ListarEmpleados extends Component{
                                     <td>{empleado.nombre}</td>
                                     <td>{empleado.puesto}</td>
                                     <td>{empleado.email}</td>
+                                    <td>
+                                        <Link className="btn btn-warning" role="button" 
+                                        to={`/editar-empleado/${empleado.id}`}>
+                                            Editar
+                                        </Link>{" "}
+                                    </td>
                                 </tr>
                             })
                         }

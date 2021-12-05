@@ -32,7 +32,7 @@ class CrearEmpleado extends Component {
   }
 
   fncEntradaDatos = (event) => {
-    const type = event.target.type;
+    //const type = event.target.type;
     const name = event.target.name;
     const value = event.target.value;
     this.setState({

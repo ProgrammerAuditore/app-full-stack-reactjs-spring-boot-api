@@ -17,6 +17,10 @@ class EmpleadoService {
         });
     }
 
+    getEmpleado(empleadoId){
+        return axios.get(`${EMPLEADO_API_BASE_URL}/${empleadoId}`);
+    }
+
 }
 
 export default new EmpleadoService();
