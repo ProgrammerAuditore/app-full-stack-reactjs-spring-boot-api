@@ -9,15 +9,16 @@ import EditarEmpleado from "./components/EditarEmpleado";
 function App() {
   return (
     <div>
-        <HeaderComponente></HeaderComponente>
-        <div className="container">
-          <Routes>
-            <Route path="/" element={<ListarEmpleados />}></Route>
-            <Route path="/crear-empleado" element={<CrearEmpleado />}></Route>
-            <Route path="/editar-empleado/:id" element={<EditarEmpleado />}></Route>
-          </Routes>
-        </div>
-        <FooterComponente></FooterComponente>
+      <HeaderComponente></HeaderComponente>
+      <div className="container">
+        <Routes>
+          <Route path="/" element={<ListarEmpleados />}></Route>
+          <Route path="/empleados" element={<ListarEmpleados />}></Route>
+          <Route path="/crear-empleado" element={<CrearEmpleado />}></Route>
+          <Route path="/editar-empleado/:id" element={<EditarEmpleado />}></Route>
+        </Routes>
+      </div>
+      <FooterComponente></FooterComponente>
     </div>
   );
 }
