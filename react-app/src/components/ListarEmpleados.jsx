@@ -58,7 +58,7 @@ class ListarEmpleados extends Component{
                                     <td>{empleado.email}</td>
                                     <td>
                                         <Link className="btn btn-warning" role="button" 
-                                        to={`empleados/actualizar/${empleado.id}`}>
+                                        to={`actualizar/${empleado.id}`}>
                                             Editar
                                         </Link>{" "}
                                     </td>
