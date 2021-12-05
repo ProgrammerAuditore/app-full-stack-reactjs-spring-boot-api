@@ -99,14 +99,13 @@ function VistaEmpleado() {
                 >
                   Editar
                 </Link>{" "}
-                <Link
+                <Button
                   onClick={fncEliminarEmpleado}
-                  className="btn btn-danger btn-sm"
-                  role="button"
-                  to=""
+                  variant="danger"
+                  size="sm"
                 >
                   Eliminar
-                </Link>{" "}
+                </Button>{" "}
               </Form>
             </Card.Body>
           </Card>
