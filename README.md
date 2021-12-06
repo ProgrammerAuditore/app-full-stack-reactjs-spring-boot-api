@@ -14,3 +14,7 @@ Además de incluir react-bootstrap, react-router, axios, etc.
 ![Preview 3](source/preview03.jpg)
 
 ![Preview 4](source/preview04.jpg)
+
+![Preview 5](source/preview05.jpg)
+
+![Preview 6](source/preview06.jpg)
