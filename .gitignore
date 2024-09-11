@@ -1,0 +1,5 @@
+# Ignorar carpetas
+.metadata
+.vscode
+/react-app/node_modules
+/spring-api/target
