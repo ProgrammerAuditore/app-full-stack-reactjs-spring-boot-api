@@ -48,7 +48,7 @@ Para arrancar el sistema de forma local siga los siguientes pasos:
 $ mvn clean install
 ```
 
-* Paso 2) Ejecutar el sig. comando para arrancar la aplicación de ReactJS
+* Paso 2) Ejecutar el sig. comando para arrancar el servicio de SpringBoot
 
 ```shell
 $ mvn spring-boot:run
